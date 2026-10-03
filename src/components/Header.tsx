@@ -11,6 +11,8 @@ export default function Header({ title }: HeaderProps) {
 
       <div className="nav-links">
         <Link href="/about">About</Link>
+        <Link href="/login">Login</Link>
+        <Link href="/signup">Signup</Link>
       </div>
     </nav>
   );
