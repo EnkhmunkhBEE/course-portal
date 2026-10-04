@@ -7,7 +7,7 @@ export default function Likes(){
 
     return(
         <button onClick={() => setLikes(likes + 1)}>
-            likes : {likes}
+            ❤️{likes}
         </button>
 
     )
