@@ -1,4 +1,4 @@
- export type Formdata = {
+export interface Formdata {
   username: string;
   password: string;
   password_confirm : string;

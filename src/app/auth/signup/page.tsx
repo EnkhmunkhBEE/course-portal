@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Formdata, initialForm } from "../types";
+import { Formdata, initialForm } from "../../types";
 
 export default function Sign_up() {
   const [form, setForm] = useState<Formdata>(initialForm);
@@ -20,7 +20,10 @@ export default function Sign_up() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+ <div className="auth-page">
+    <form className="auth-form" onSubmit={handleSubmit}>
+    <h1>Sign Up</h1>
       <input
         type="text"
         placeholder="Enter Username"
@@ -59,7 +62,7 @@ export default function Sign_up() {
         }
         required
         minLength={8}
-      />
+        />
 
       <input
         type="password"
@@ -72,11 +75,13 @@ export default function Sign_up() {
           })
         }
         required
-      />
+        />
 
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
 
       <input type="submit" value="Submit" />
     </form>
-  );
+  </div>
+        </>
+  )
 }

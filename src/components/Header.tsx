@@ -1,6 +1,7 @@
 import Link from "next/link";
+import DarkMode from "./DarkMode";
 
-type HeaderProps = {
+export interface HeaderProps {
   title: string;
 };
 
@@ -11,8 +12,9 @@ export default function Header({ title }: HeaderProps) {
 
       <div className="nav-links">
         <Link href="/about">About</Link>
-        <Link href="/login">Login</Link>
-        <Link href="/signup">Signup</Link>
+        <Link href="auth/login">Login</Link>
+        <Link href="auth/signup">Signup</Link>
+        <DarkMode/>
       </div>
     </nav>
   );

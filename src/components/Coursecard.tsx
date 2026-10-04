@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import Likes from "./Likebutton";
 type CourseCardProps = {
   title: string;
   category: string;
@@ -15,16 +15,13 @@ export default function CourseCard({
 
   
 {
-  const [likes ,setlikes] = useState(0)
 
   return (
     <article className="course-card">
       <h2>{title}</h2>
       <p className="category">{category}</p>
       <span className="level">{level}</span>
-      <button onClick={() => setlikes(likes + 1)}>
-        likes :  {likes}
-        </button>
+      <Likes/>
     </article>
   );
 }
