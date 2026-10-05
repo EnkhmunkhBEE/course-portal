@@ -1,38 +1,109 @@
 "use client";
 
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
+
 import { Formdata, initialForm } from "../../types";
-import handleSubmit from "../../formhandle/SubmitHandle";
+import { auth } from "@/lib/firebase";
 
+export default function Login() {
+  const [form, setForm] =
+    useState<Formdata>(initialForm);
 
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-export default function Page() {
-    const [form , setForm] = useState<Formdata>(initialForm)
-return (
-  <div className="auth-page">
-    <form className="auth-form" onSubmit={(e) => handleSubmit(e, form)}>
-      <h1>Login</h1>
+  const router = useRouter();
 
-      <input
-        type="text"
-        placeholder="Enter Username"
-        value={form.username}
-        onChange={(e) => setForm({ ...form, username: e.target.value })}
-        required
-      />
+  async function handleLogin(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
+    e.preventDefault();
 
-      <input
-        type="password"
-        placeholder="Enter password"
-        value={form.password}
-        onChange={(e) => setForm({ ...form, password: e.target.value })}
-        required
-      />
+    setError("");
+    setSuccess("");
 
-      <input type="submit" value="Login" />
-    </form>
-  </div>
-);
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        form.email,
+        form.password
+      );
 
+      setSuccess("Login successful!");
 
+      router.push("/Dashboard");
+
+    } catch (error: any) {
+      console.log(error);
+
+      if (
+        error.code ===
+        "auth/invalid-credential"
+      ) {
+        setError(
+          "Email or password is incorrect."
+        );
+      } else {
+        setError(
+          "Login failed. Please try again."
+        );
+      }
+    }
+  }
+
+  return (
+    <div className="auth-page">
+      <form
+        className="auth-form"
+        onSubmit={handleLogin}
+      >
+        <h1>Login</h1>
+
+        <input
+          type="email"
+          placeholder="Enter email"
+          value={form.email}
+          onChange={(e) =>
+            setForm({
+              ...form,
+              email: e.target.value,
+            })
+          }
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={form.password}
+          onChange={(e) =>
+            setForm({
+              ...form,
+              password: e.target.value,
+            })
+          }
+          required
+        />
+
+        {error && (
+          <p className="error-text">
+            {error}
+          </p>
+        )}
+
+        {success && (
+          <p>
+            {success}
+          </p>
+        )}
+
+        <input
+          type="submit"
+          value="Login"
+        />
+      </form>
+    </div>
+  );
 }

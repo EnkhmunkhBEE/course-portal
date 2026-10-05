@@ -12,8 +12,8 @@ export default function Header({ title }: HeaderProps) {
 
       <div className="nav-links">
         <Link href="/about">About</Link>
-        <Link href="auth/login">Login</Link>
-        <Link href="auth/signup">Signup</Link>
+        <Link href="/auth/login">Login</Link>
+        <Link href="/auth/signup">Signup</Link>
         <DarkMode/>
       </div>
     </nav>

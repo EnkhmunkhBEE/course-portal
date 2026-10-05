@@ -1,12 +1,13 @@
-export interface Formdata {
+export type Formdata = {
   username: string;
-  password: string;
-  password_confirm : string;
   email: string;
+  password: string;
+  password_confirm: string;
 };
+
 export const initialForm: Formdata = {
   username: "",
-  password: "",
-  password_confirm : "",
   email: "",
+  password: "",
+  password_confirm: "",
 };

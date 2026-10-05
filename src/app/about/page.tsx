@@ -1,11 +1,11 @@
-import Header from "@/components/Header";
+import PortalLayout from "@/components/PortalLayout";
 
 export default function Page() {
-  return(
-    <>
-    <Header title="about"/>
-    <h2>about</h2>
-    </>
-    
-  )
+  return (
+    <PortalLayout>
+      <main>
+        <h1>About</h1>
+      </main>
+    </PortalLayout>
+  );
 }

@@ -1,13 +1,27 @@
+import Link from "next/link";
+
 export default function Sidebar() {
   return (
     <aside className="sidebar">
-      <h2>Menu</h2>
+    
 
-      <div>Dashboard</div>
-      <div>Courses</div>
-      <div>Category</div>
-      <div>Profile</div>
-      <div>Settings</div>
+      <nav>
+        <Link href="/Dashboard">
+          Dashboard
+        </Link>
+
+        <Link href="/">
+          Courses
+        </Link>
+
+        <Link href="/profile">
+          Profile
+        </Link>
+
+        <Link href="/settings">
+          Settings
+        </Link>
+      </nav>
     </aside>
   );
 }
