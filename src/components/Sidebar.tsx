@@ -6,7 +6,7 @@ export default function Sidebar() {
     
 
       <nav>
-        <Link href="/Dashboard">
+        <Link href="/dashboard">
           Dashboard
         </Link>
 
