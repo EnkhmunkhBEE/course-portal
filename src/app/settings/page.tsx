@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 
 import PortalLayout from "@/components/PortalLayout";
-import AccountSettings from "@/components/Settings/AccountSettings";
-import PasswordSettings from "@/components/Settings/PasswordSettings";
+import AccountSettings from "@/components/settings/AccountSettings";
+import PasswordSettings from "@/components/settings/PasswordSettings";
 
 export default function Settings() {
   const router = useRouter();

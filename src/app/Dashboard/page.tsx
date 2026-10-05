@@ -5,9 +5,9 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
 import PortalLayout from "@/components/PortalLayout";
-import WelcomeCard from "@/components/Dashboard/WelcomeCard";
-import StatCard from "@/components/Dashboard/StatCard";
-import RecentCourses from "@/components/Dashboard/RecentCourses";
+import WelcomeCard from "@/components/dashboard/WelcomeCard";
+import StatCard from "@/components/dashboard/StatCard";
+import RecentCourses from "@/components/dashboard/RecentCourses";
 
 export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);

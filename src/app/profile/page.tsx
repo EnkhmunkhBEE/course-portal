@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 
 import PortalLayout from "@/components/PortalLayout";
-import ProfileCard from "@/components/Profile/ProfileCard";
-import ProfileInfo from "@/components/Profile/ProfileInfo";
+import ProfileCard from "@/components/profile/ProfileCard";
+import ProfileInfo from "@/components/profile/ProfileInfo";
 
 export default function Profile() {
   const [user, setUser] = useState<User | null>(null);
