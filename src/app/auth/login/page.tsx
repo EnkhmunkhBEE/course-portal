@@ -33,7 +33,7 @@ export default function Login() {
 
       setSuccess("Login successful!");
 
-      router.push("/Dashboard");
+      router.push("/dashboard");
 
     } catch (error: any) {
       console.log(error);
