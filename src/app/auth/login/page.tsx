@@ -1,9 +1,9 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-
+import Sign_up from "../signup/page";
 import { Formdata, initialForm } from "../../types";
 import { auth } from "@/lib/firebase";
 
@@ -104,6 +104,10 @@ export default function Login() {
           value="Login"
         />
       </form>
+      <p>
+        <Link href="/auth/signup">Newbie? then sign up</Link>
+        
+      </p>
     </div>
   );
 }
