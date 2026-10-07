@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function AccountSettings() {
+export default function PasswordSettings() {
   const [password, setPassword] = useState("");
 
   function handleSave() {

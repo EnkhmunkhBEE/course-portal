@@ -8,8 +8,8 @@ import { auth } from "@/lib/firebase";
 
 import PortalLayout from "@/components/PortalLayout";
 import AccountSettings from "@/components/settings/AccountSettings";
+import passwordSettings from "@/components/settings/PasswordSettings";
 import PasswordSettings from "@/components/settings/PasswordSettings";
-
 export default function Settings() {
   const router = useRouter();
 
@@ -33,7 +33,7 @@ export default function Settings() {
 
         <AccountSettings />
 
-        <PasswordSettings />
+        <PasswordSettings/>
       </main>
     </PortalLayout>
   );
